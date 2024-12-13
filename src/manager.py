@@ -21,7 +21,7 @@ class Manager:
             # "2": self.decrypt_text,
             "3": self.show_buffer,
             "4": self.load_from_file,
-            # "5": self.save_to_file,
+            "5": self.save_to_file,
         }
 
     def run(self):
@@ -46,4 +46,7 @@ class Manager:
         for text in self.buffer.get_all():
             print(f"Text: {text}")
 
-    def load_from_file(self):
+
+    def save_to_file(self):
+        filename = input("Enter the filename: ")
+        self.file_handler.save(filename,self.buffer.get_all())
