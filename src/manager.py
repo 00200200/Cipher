@@ -19,7 +19,7 @@ class Manager:
         self.actions: dict[str, Callable] = {
             # "1": self.encrypt_text,
             # "2": self.decrypt_text,
-            # "3": self.show_buffer,
+            "3": self.show_buffer,
             "4": self.load_from_file,
             # "5": self.save_to_file,
         }
@@ -38,6 +38,8 @@ class Manager:
             if action:
                 action()
 
+    def show_buffer(self):
+        for text in self.buffer.get_all():
+            print(f"Text: {text}")
+
     def load_from_file(self):
-        print("dooing  smth")
-        pass
