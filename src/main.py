@@ -1,5 +1,9 @@
+from src.manager import Manager
+
+
 def main():
-    pass
+    manager = Manager()
+    manager.run()
 
 
 if __name__ == "__main__":
