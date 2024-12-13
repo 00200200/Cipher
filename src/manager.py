@@ -3,8 +3,11 @@ from typing import Dict, Callable
 
 
 class Manager:
+    """ Manages the main logic of the application acting as the fascade
+    """
 
     def __init__(self):
+        """Initializes class with required methods."""
         self.menu = Menu()
         self.actions: Dict[str, Callable] = {
             "1": self.encrypt_text,
@@ -15,7 +18,10 @@ class Manager:
         }
 
     def run(self):
-
+        """
+        Main loop of the program.
+        Handles user input and selcted actions.
+        """
         while True:
             self.menu.show_menu()
             choice = self.menu.get_choice()
