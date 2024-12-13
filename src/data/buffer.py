@@ -16,7 +16,7 @@ class Buffer:
         """
         self.data.append(text)
 
-    def get_all(self):
+    def get_all(self) -> list[Text]:
         """
         Returns list of text objects in a buffer list.
         :return: list of Text objects
