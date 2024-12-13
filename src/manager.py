@@ -1,6 +1,7 @@
 from typing import Callable
 from src.menus.menu import Menu
-
+from src.file_service.file_handler import FileHandler
+from src.data.buffer import Buffer
 
 class Manager:
     """
@@ -13,6 +14,8 @@ class Manager:
 
         """
         self.menu = Menu()
+        self.buffer = Buffer()
+        self.file_handler = FileHandler()
         self.actions: dict[str, Callable] = {
             # "1": self.encrypt_text,
             # "2": self.decrypt_text,
