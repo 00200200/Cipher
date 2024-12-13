@@ -20,7 +20,13 @@ class Menu:
 
     @staticmethod
     def get_choice() -> str:
-    
+        """
+            Prompts the user for a menu choice
+
+            returns:
+                str : choice from the menu options.
+
+            """
         while True:
             choice = input("Choose an option:")
             if choice in {"1", "2", "3", "4", "5", "6"}:
