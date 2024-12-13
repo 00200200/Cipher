@@ -1,9 +1,6 @@
 class Menu:
     """
-    Represents the menu for Cipher Application
-
-    Class provides a static method to display the main menu
-    with app options
+    Represents the menu interface for User interaction
     """
     @staticmethod
     def show_menu():
