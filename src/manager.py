@@ -48,5 +48,9 @@ class Manager:
 
 
     def save_to_file(self):
+        """
+        Save buffer to selected file
+        :return: None
+        """
         filename = input("Enter the filename: ")
         self.file_handler.save(filename,self.buffer.get_all())
