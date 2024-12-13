@@ -39,6 +39,10 @@ class Manager:
                 action()
 
     def show_buffer(self):
+        """
+        Displays content in buffer
+        :return:None
+        """
         for text in self.buffer.get_all():
             print(f"Text: {text}")
 
