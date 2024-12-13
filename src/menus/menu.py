@@ -19,10 +19,11 @@ class Menu:
         print("-" * 24)
 
     @staticmethod
-    def get_choice() -> int:
+    def get_choice() -> str:
+    
         while True:
-            choice = int(input("Choose an option:"))
-            if choice in {1, 2, 3, 4, 5, 6}:
+            choice = input("Choose an option:")
+            if choice in {"1", "2", "3", "4", "5", "6"}:
                 return choice
             print("-" * 24)
             print("Invalid choice. Try again....")
