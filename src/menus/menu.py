@@ -1,4 +1,5 @@
-class Menu:
+class Menu: # TODO MainMenu
+    NUMBER_OF_OPTIONS = 6
     """
     Represents the menu interface for User interaction
     """
@@ -19,17 +20,16 @@ class Menu:
         print("-" * 24)
 
     @staticmethod
-    def get_choice() -> str:
+    def get_choice() -> int:
         """
-            Prompts the user for a menu choice
+        Prompts the user for a menu choice
 
-            returns:
-                str : choice from the menu options.
-
-            """
+        returns:
+            str : choice from the menu options.
+        """
         while True:
-            choice = input("Choose an option:")
-            if choice in {"1", "2", "3", "4", "5", "6"}:
+            choice = int(input("Choose an option:"))
+            if choice in range(1, Menu.NUMBER_OF_OPTIONS + 1):
                 return choice
             print("-" * 24)
             print("Invalid choice. Try again")
