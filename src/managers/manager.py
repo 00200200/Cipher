@@ -69,8 +69,11 @@ class Manager:
         filename = input("Type path to file: ")
         try:
             data = self.file_handler.load(filename)
-            for text in data:
-                self.buffer.add(text)
+            if not data:
+                print("No data loaded. File might be empty ")
+            else:
+                for text in data:
+                    self.buffer.add(text)
         except Exception as e:
             print(e)
 
