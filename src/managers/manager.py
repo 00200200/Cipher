@@ -36,11 +36,16 @@ class Manager:
         Handles user input and selcted actions.
         """
         while self.running:
-            self.menu.show_menu()
-            choice = self.menu.get_choice()
-            action = self.actions.get(choice)
-            if action:
-                action()
+            try:
+                self.menu.show_menu()
+                choice = self.menu.get_choice()
+                action = self.actions.get(choice)
+                if action:
+                    action()
+                else:
+                    print("Invalid action.")
+            except Exception as e:
+                print(f"error : {e}")
 
     def _exit(self) -> None:
         """
@@ -82,12 +87,15 @@ class Manager:
         Encrypts the user provided text using the chosen strategy
         :return:None
         """
-        text = input("Enter text to encrypt: ")
-        rot_type = input("Choose encryption type (rot13,rot47): ").lower()
+
         try:
+            text = input("Enter text to encrypt: ")
+            rot_type = input("Choose encryption type (rot13,rot47): ").lower()
             encryption = EncryptionFactory.get_encryption(rot_type)
             encrypted_text = encryption.encrypt(text)
             self.buffer.add(Text(encrypted_text, rot_type, "encrypted"))
+        except ValueError as e:
+            print(f"Error: {e}")
         except Exception as e:
             print(f"Error : {e}")
 
@@ -96,12 +104,14 @@ class Manager:
         Decrypts the user provided text using the chosen strategy
         :return:None
         """
-        text = input("Enter text to decrypt: ")
-        rot_type = input("Choose decryption type (rot13,rot47): ").lower()
         try:
+            text = input("Enter text to decrypt: ")
+            rot_type = input("Choose decryption type (rot13,rot47): ").lower()
             encryption = EncryptionFactory.get_encryption(rot_type)
             encrypted_text = encryption.decrypt(text)
             self.buffer.add(Text(encrypted_text, rot_type, "decrypter"))
+        except ValueError as e:
+            print(f"Error: {e}")
         except Exception as e:
             print(f"Error : {e}")
 
