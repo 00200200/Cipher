@@ -8,7 +8,7 @@ class Text:
 
     text: content
     rot_type: type of encryption (rot13 , rot47)
-    status: status : (encyrpted,decrypted)
+    status: status of the text (encyrpted,decrypted)
     """
     text: str
     rot_type: str
