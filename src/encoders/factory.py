@@ -14,11 +14,9 @@ class EncryptionFactory:
         :param rot_type: Type of encryption ('rot13', 'rot47')
         :return:  Instance of and encryption class.
         """
-        try:
-            if rot_type == "rot13":
-                return Rot13Encryption()
-            elif rot_type == "rot47":
-                return Rot47Encryption()
-            raise ValueError(f"Unsupported encryption type: {rot_type}")
-        except Exception as e:
-            print(f"Error :{e}")
+        if rot_type == "rot13":
+            return Rot13Encryption()
+        elif rot_type == "rot47":
+            return Rot47Encryption()
+        raise ValueError(f"Unsupported encryption type: {rot_type}")
+
