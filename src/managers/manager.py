@@ -31,11 +31,11 @@ class Manager:
         Main loop of the program.
         Handles user input and selcted actions.
         """
-        while running:
+        while self.running:
             self.menu.show_menu()
             choice = self.menu.get_choice()
             action = self.actions.get(choice)
-            if actiony:
+            if action:
                 action()
 
     def _exit(self) -> None:
