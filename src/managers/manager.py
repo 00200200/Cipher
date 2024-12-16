@@ -8,36 +8,41 @@ class Manager:
     Manages the main logic of the application acting as the fascade
     """
 
-    def __init__(self):
+    def __init__(self, menu: Menu, buffer: Buffer, file_handler: FileHandler):
         """
         Initializes class with required methods.
 
         """
-        self.menu = Menu()
-        self.buffer = Buffer()
-        self.file_handler = FileHandler()
-        self.actions: dict[str, Callable] = {
-            # "1": self.encrypt_text,
-            # "2": self.decrypt_text,
-            "3": self.show_buffer,
-            "4": self.load_from_file,
-            "5": self.save_to_file,
+        self.menu = menu
+        self.buffer = buffer
+        self.file_handler = file_handler
+        self.actions: dict[int, Callable] = {
+            1: self.encrypt_text,
+            2: self.decrypt_text,
+            3: self.show_buffer,
+            4: self.load_from_file,
+            5: self.save_to_file,
+            6: self._exit,
         }
+        self.running = True
 
     def run(self):
         """
         Main loop of the program.
         Handles user input and selcted actions.
         """
-        while True:
+        while running:
             self.menu.show_menu()
             choice = self.menu.get_choice()
             action = self.actions.get(choice)
-            if choice == "6":
-                break
-            if action:
+            if actiony:
                 action()
 
+    def _exit(self) -> None:
+        """
+
+        """
+        self.running = False
     def show_buffer(self):
         """
         Displays content in buffer
