@@ -53,10 +53,10 @@ class Manager:
         for text in self.buffer.get_all():
             print(f"Text: {text}")
 
-    def load_from_file(self):
+    def load_from_file(self) -> None:
         """
-
-        :return:
+        Loads a list of Text objects from specified file
+        :return: None
         """
         filename = input("Type path to file: ")
         try:
