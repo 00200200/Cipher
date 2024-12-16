@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 from managers.manager import Manager
 from file_service.file_handler import FileHandler
 from data.buffer import Buffer
@@ -15,4 +14,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"Unexpected error : {e}")
