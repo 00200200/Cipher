@@ -76,7 +76,11 @@ class Manager:
         filename = input("Enter the filename: ")
         self.file_handler.save(filename, self.buffer.get_all())
 
-    def encrypt_text(self):
+    def encrypt_text(self) -> None:
+        """
+        Encrypts the user provided text using the chosen strategy
+        :return:None
+        """
         text = input("Enter text to encrypt: ")
         rot_type = input("Choose encryption type (rot13,rot47): ").lower()
         try:
