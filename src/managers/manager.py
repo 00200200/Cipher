@@ -30,7 +30,7 @@ class Manager:
         }
         self.running = True
 
-    def run(self):
+    def run(self) -> None:
         """
         Main loop of the program.
         Handles user input and selcted actions.
@@ -77,7 +77,7 @@ class Manager:
         except Exception as e:
             print(e)
 
-    def save_to_file(self):
+    def save_to_file(self) -> None:
         """
         Save buffer to selected file
         :return: None
@@ -102,7 +102,7 @@ class Manager:
         except Exception as e:
             print(f"Error : {e}")
 
-    def decrypt_text(self):
+    def decrypt_text(self) -> None:
         """
         Decrypts the user provided text using the chosen strategy
         :return:None
