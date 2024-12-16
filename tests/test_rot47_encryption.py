@@ -10,7 +10,11 @@ import pytest
     ("TEST EXAMPLE", "%t$% t)p|!{t"),
     ("Test Example", "%6DE tI2>A=6"),
 ])
-def test_rot47_encrypt(input_text,output):
+def test_rot47_encrypt(input_text, output) -> None:
+    """
+    Tests the encryption() method of Rot47Encryption class
+    Ensures that encryption workds correctly
+    """
     rot47 = Rot47Encryption()
     assert rot47.encrypt(input_text) == output
 
@@ -24,5 +28,9 @@ def test_rot47_encrypt(input_text,output):
     ("%6DE tI2>A=6", "Test Example"),
 ])
 def test_rot47_decrypt(input_text, output):
+    """
+    Tests the decrypt() method of Rot47Encryption class
+    Ensures that decryption workds correctly
+    """
     rot47 = Rot47Encryption()
     assert rot47.decrypt(input_text) == output

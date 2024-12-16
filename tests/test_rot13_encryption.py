@@ -19,7 +19,7 @@ def test_rot13_encrypt(input_text, output) -> None:
     ("uryyb", "hello"), ("URYYB", "HELLO"), ("12345", "12345"), ("''", "''"),
     ("grfg rknzcyr", "test example"), ("GRFG RKNZCYR", "TEST EXAMPLE"), ("Grfg Rknzcyr", "Test Example"),
 ])
-def test_rot13_decrypt(input_text, output):
+def test_rot13_decrypt(input_text, output) -> None:
     """
     Tests the decrypt() method of Rot13Encryption class
     Ensures that decryption workds correctly
