@@ -91,6 +91,10 @@ class Manager:
             print(f"Error : {e}")
 
     def decrypt_text(self):
+        """
+        Decrypts the user provided text using the chosen strategy
+        :return:None
+        """
         text = input("Enter text to decrypt: ")
         rot_type = input("Choose decryption type (rot13,rot47): ").lower()
         try:
