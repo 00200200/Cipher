@@ -91,4 +91,11 @@ class Manager:
             print(f"Error : {e}")
 
     def decrypt_text(self):
-        pass
+        text = input("Enter text to decrypt: ")
+        rot_type = input("Choose decryption type (rot13,rot47): ").lower()
+        try:
+            encryption = EncryptionFactory.get_encryption(rot_type)
+            encrypted_text = encryption.decrypt(text)
+            self.buffer.add(Text(encrypted_text, rot_type, "decrypter"))
+        except Exception as e:
+            print(f"Error : {e}")
