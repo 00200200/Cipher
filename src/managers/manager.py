@@ -41,7 +41,7 @@ class Manager:
 
     def _exit(self) -> None:
         """
-
+         method terminating the main loop of program.
         """
         self.running = False
 
@@ -52,6 +52,19 @@ class Manager:
         """
         for text in self.buffer.get_all():
             print(f"Text: {text}")
+
+    def load_from_file(self):
+        """
+
+        :return:
+        """
+        filename = input("Type path to file: ")
+        try:
+            data = self.file_handler.load(filename)
+            for text in data:
+                self.buffer.add(text)
+        except Exception as e:
+            print(e)
 
     def save_to_file(self):
         """
@@ -65,7 +78,4 @@ class Manager:
         pass
 
     def decrypt_text(self):
-        pass
-
-    def load_from_file(self):
         pass
