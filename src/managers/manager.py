@@ -2,6 +2,8 @@ from typing import Callable
 from src.menus.main_menu import MainMenu
 from src.file_service.file_handler import FileHandler
 from src.data.buffer import Buffer
+from src.data.text import Text
+from src.encoders.factory import EncryptionFactory
 
 
 class Manager:
@@ -75,7 +77,14 @@ class Manager:
         self.file_handler.save(filename, self.buffer.get_all())
 
     def encrypt_text(self):
-        pass
+        text = input("Enter text to encrypt: ")
+        rot_type = input("Choose encryption type (rot13,rot47): ").lower()
+        try:
+            encryption = EncryptionFactory.get_encryption(rot_type)
+            encrypted_text = encryption.encrypt(text)
+            self.buffer.add(Text(encrypted_text, rot_type, "encrypted"))
+        except Exception as e:
+            print(f"Error : {e}")
 
     def decrypt_text(self):
         pass
