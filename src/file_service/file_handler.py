@@ -22,6 +22,7 @@ class FileHandler:
             print(f"Error File {filename} not found ")
         except Exception as e:
             print(f"Error {e}")
+        return []
 
     @staticmethod
     def save(filename: str, data: List[Text]) -> None:
@@ -33,7 +34,7 @@ class FileHandler:
         """
 
         try:
-    
+
             with open(filename, "w", encoding='utf-8') as file:
                 json.dump([{"text": item.text, "rot_type": item.rot_type, "status": item.status} for item in data], file,
                           indent=2)

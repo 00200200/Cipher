@@ -1,4 +1,4 @@
-from encryption import Encryption
+from src.encoders.encryption import Encryption
 
 
 class Rot13Encryption(Encryption):

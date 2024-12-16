@@ -15,12 +15,10 @@ class EncryptionFactory:
         :return:  Instance of and encryption class.
         """
         try:
-
             if rot_type == "rot13":
                 return Rot13Encryption()
             elif rot_type == "rot47":
                 return Rot47Encryption()
-            else:
-                raise ValueError(f"Unsupported encryption type: {rot_type}")
+            raise ValueError(f"Unsupported encryption type: {rot_type}")
         except Exception as e:
             print(f"Error :{e}")

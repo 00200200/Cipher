@@ -1,4 +1,4 @@
-from encryption import Encryption
+from src.encoders.encryption import Encryption
 
 
 class Rot47Encryption(Encryption):
@@ -26,4 +26,3 @@ class Rot47Encryption(Encryption):
         :return: decrypted text.
         """
         return self.encrypt(text)
-    
