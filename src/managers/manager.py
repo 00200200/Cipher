@@ -3,12 +3,13 @@ from src.menus.main_menu import MainMenu
 from src.file_service.file_handler import FileHandler
 from src.data.buffer import Buffer
 
+
 class Manager:
     """
     Manages the main logic of the application acting as the fascade
     """
 
-    def __init__(self, menu: Menu, buffer: Buffer, file_handler: FileHandler):
+    def __init__(self, menu: MainMenu, buffer: Buffer, file_handler: FileHandler):
         """
         Initializes class with required methods.
 
@@ -50,7 +51,6 @@ class Manager:
         """
         for text in self.buffer.get_all():
             print(f"Text: {text}")
-
 
     def save_to_file(self):
         """

@@ -10,7 +10,7 @@ def main():
     """Entry point of application
         Initialize main class and start main loop
     """
-    manager = Manager(file_handler=FileHandler(), buffer=Buffer(), menu=Menu())
+    manager = Manager(file_handler=FileHandler(), buffer=Buffer(), menu=MainMenu())
     manager.run()
 
 
