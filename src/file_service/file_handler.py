@@ -19,7 +19,13 @@ class FileHandler:
             return [Text(item["text"], item["rot_type"], item["status"]) for item in data]
 
     @staticmethod
-    def save(filename: str, data: List[Text]):
+    def save(filename: str, data: List[Text]) -> None:
+        """
+        Save a List of Text objects to specified file.
+        :param filename: path to JSON file.
+        :param data: List of Text objects
+        :return:  None
+        """
 
         with open(filename, "w", encoding='utf-8') as file:
             json.dump([{"text": item.text, "rot_type": item.rot_type, "status": item.status} for item in data], file, indent=2)
