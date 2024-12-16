@@ -2,12 +2,17 @@ from src.data.text import Text
 
 
 class Buffer:
-    """Stores and manage data during program execution. """
+    """
+    Stores and manage data during program execution.
+    """
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """
+        Initialize buffer with list of Text objects.
+        """
         self.data: list[Text] = []
 
-    def add(self, text: Text):
+    def add(self, text: Text) -> None:
         """
         Adds a new Text object to buffer list
 
