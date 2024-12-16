@@ -33,7 +33,7 @@ class MainMenu:
                 if choice in range(1, MainMenu.NUMBER_OF_OPTIONS + 1):
                     return choice
                 print("-" * 24)
-                print(f"Invalid choice. Choice should be one of {[i for i in range(MainMenu.NUMBER_OF_OPTIONS+1)]} ")
+                print(f"Invalid choice. Choice should be between 1 and {MainMenu.NUMBER_OF_OPTIONS}. ")
                 print("-" * 24)
             except ValueError:
                 print("-" * 24)
