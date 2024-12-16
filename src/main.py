@@ -3,7 +3,7 @@
 from managers.manager import Manager
 from file_service.file_handler import FileHandler
 from data.buffer import Buffer
-from menus.menu import Menu
+from menus.main_menu import Menu
 
 
 def main():

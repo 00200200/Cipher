@@ -1,5 +1,5 @@
 from typing import Callable
-from src.menus.menu import Menu
+from src.menus.main_menu import Menu
 from src.file_service.file_handler import FileHandler
 from src.data.buffer import Buffer
 
