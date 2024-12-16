@@ -1,11 +1,16 @@
-from src.manager import Manager
+#!/usr/bin/env python3
+
+from managers.manager import Manager
+from file_service.file_handler import FileHandler
+from data.buffer import Buffer
+from menus.menu import Menu
 
 
 def main():
     """Entry point of application
         Initialize main class and start main loop
     """
-    manager = Manager()
+    manager = Manager(file_handler=FileHandler(), buffer=Buffer(), menu=Menu())
     manager.run()
 
 
