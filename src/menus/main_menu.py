@@ -23,14 +23,20 @@ class MainMenu:
     def get_choice() -> int:
         """
         Prompts the user for a menu choice
-
         returns:
             str : choice from the menu options.
         """
         while True:
-            choice = int(input("Choose an option:"))
-            if choice in range(1, MainMenu.NUMBER_OF_OPTIONS + 1):
-                return choice
-            print("-" * 24)
-            print("Invalid choice. Try again")
-            print("-" * 24)
+            try:
+                choice = int(input("Choose an option:"))
+                if choice in range(1, MainMenu.NUMBER_OF_OPTIONS + 1):
+                    return choice
+                print("-" * 24)
+                print(f"Invalid choice. Choice should be one of {[i for i in range(MainMenu.NUMBER_OF_OPTIONS+1)]} ")
+                print("-" * 24)
+            except ValueError:
+                print("-" * 24)
+                print("Invalid choice. Option should be an Integer.")
+                print("-" * 24)
+                print("Try again...")
+                print("-" * 24)
