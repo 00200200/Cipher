@@ -44,6 +44,7 @@ class Manager:
 
         """
         self.running = False
+
     def show_buffer(self):
         """
         Displays content in buffer
@@ -58,4 +59,13 @@ class Manager:
         :return: None
         """
         filename = input("Enter the filename: ")
-        self.file_handler.save(filename,self.buffer.get_all())
+        self.file_handler.save(filename, self.buffer.get_all())
+
+    def encrypt_text(self):
+        pass
+
+    def decrypt_text(self):
+        pass
+
+    def load_from_file(self):
+        pass
