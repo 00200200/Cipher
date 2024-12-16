@@ -27,3 +27,10 @@ class Buffer:
         :return: list of Text objects
         """
         return self.data
+
+    def clear(self) -> None:
+        """
+        Clears the buffer.
+        :return: None
+        """
+        self.data.clear()
