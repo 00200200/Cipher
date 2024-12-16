@@ -18,3 +18,6 @@ if __name__ == "__main__":
         main()
     except Exception as e:
         print(f"Unexpected error : {e}")
+    except KeyboardInterrupt as e:
+        print(f"\nProgram interrupted by user.")
+        print("Exiting...")
