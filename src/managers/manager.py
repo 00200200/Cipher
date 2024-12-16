@@ -23,9 +23,10 @@ class Manager:
             1: self.encrypt_text,
             2: self.decrypt_text,
             3: self.show_buffer,
-            4: self.load_from_file,
-            5: self.save_to_file,
-            6: self._exit,
+            4: self.clear_buffer,
+            5: self.load_from_file,
+            6: self.save_to_file,
+            7: self._exit,
         }
         self.running = True
 
@@ -103,3 +104,6 @@ class Manager:
             self.buffer.add(Text(encrypted_text, rot_type, "decrypter"))
         except Exception as e:
             print(f"Error : {e}")
+
+    def clear_buffer(self) -> None:
+        self.buffer.clear()
