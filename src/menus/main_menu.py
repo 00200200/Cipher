@@ -1,5 +1,5 @@
 class MainMenu:
-    NUMBER_OF_OPTIONS = 6
+    NUMBER_OF_OPTIONS = 7
     """
     Represents the menu interface for User interaction
     """
@@ -14,9 +14,10 @@ class MainMenu:
         print("|   1. Encrypt Text.   |")
         print("|   2. Decrypt Text.   |")
         print("|   3. Show buffer     |")
-        print("|   4. Load from File. |")
-        print("|   5. Save to File.   |")
-        print("|   6. Exit            |")
+        print("|   4. Clear buffer     |")
+        print("|   5. Load from File. |")
+        print("|   6. Save to File.   |")
+        print("|   7. Exit            |")
         print("-" * 24)
 
     @staticmethod
