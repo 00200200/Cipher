@@ -13,4 +13,5 @@ class Rot13Encryption(Encryption):
                 encrypted_text += char
         return encrypted_text
 
-
+    def decrypt(self, text: str) -> str:
+        return self.encrypt(text)
