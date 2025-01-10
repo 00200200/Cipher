@@ -5,6 +5,7 @@ class Rot47Encryption(Encryption):
     """
     Implements rot47 encryption and decryption
     """
+
     def encrypt(self, text: str) -> str:
         """
         Encrypt the given text using ROT47.

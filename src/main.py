@@ -7,7 +7,7 @@ from menus.main_menu import MainMenu
 
 def main():
     """Entry point of application
-        Initialize main class and start main loop
+    Initialize main class and start main loop
     """
     manager = Manager(file_handler=FileHandler(), buffer=Buffer(), menu=MainMenu())
     manager.run()
@@ -18,6 +18,6 @@ if __name__ == "__main__":
         main()
     except Exception as e:
         print(f"Unexpected error : {e}")
-    except KeyboardInterrupt as e:
-        print(f"\nProgram interrupted by user.")
+    except KeyboardInterrupt:
+        print("\nProgram interrupted by user.")
         print("Exiting...")

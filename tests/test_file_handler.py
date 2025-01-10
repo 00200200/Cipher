@@ -9,7 +9,7 @@ def test_file_handler_save_and_load() -> None:
     :return: None
     """
     data = [Text("Test", "rot13", "encrypted")]
-    FileHandler.save("test.json",data)
+    FileHandler.save("test.json", data)
 
     loaded_data = FileHandler.load("test.json")
     assert loaded_data == data

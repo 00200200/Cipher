@@ -3,13 +3,14 @@ class MainMenu:
     """
     Represents the menu interface for User interaction
     """
+
     @staticmethod
     def show_menu():
         """
         Displays the main menu for Cipher Application.
         """
         print("-" * 24)
-        print("|", f"CIPHER MENU".center(20), "|")
+        print("|", "CIPHER MENU".center(20), "|")
         print("-" * 24)
         print("|   1. Encrypt Text.   |")
         print("|   2. Decrypt Text.   |")
@@ -33,7 +34,9 @@ class MainMenu:
                 if choice in range(1, MainMenu.NUMBER_OF_OPTIONS + 1):
                     return choice
                 print("-" * 24)
-                print(f"Invalid choice. Choice should be between 1 and {MainMenu.NUMBER_OF_OPTIONS}. ")
+                print(
+                    f"Invalid choice. Choice should be between 1 and {MainMenu.NUMBER_OF_OPTIONS}. "
+                )
                 print("-" * 24)
             except ValueError:
                 print("-" * 24)

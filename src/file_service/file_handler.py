@@ -7,6 +7,7 @@ class FileHandler:
     """
     Handles file operations saving/loading Text Objects.
     """
+
     @staticmethod
     def load(filename: str) -> List[Text]:
         """
@@ -15,10 +16,13 @@ class FileHandler:
         :return: A list of Text objects
         """
         try:
-            with open(filename, "r", encoding='utf-8') as file:
+            with open(filename, "r", encoding="utf-8") as file:
                 data = json.load(file)
-                return [Text(item["text"], item["rot_type"], item["status"]) for item in data]
-        except FileNotFoundError as e:
+                return [
+                    Text(item["text"], item["rot_type"], item["status"])
+                    for item in data
+                ]
+        except FileNotFoundError:
             print(f"Error File {filename} not found ")
         except Exception as e:
             print(f"Error {e}")
@@ -35,8 +39,18 @@ class FileHandler:
 
         try:
 
-            with open(filename, "w", encoding='utf-8') as file:
-                json.dump([{"text": item.text, "rot_type": item.rot_type, "status": item.status} for item in data], file,
-                          indent=2)
+            with open(filename, "w", encoding="utf-8") as file:
+                json.dump(
+                    [
+                        {
+                            "text": item.text,
+                            "rot_type": item.rot_type,
+                            "status": item.status,
+                        }
+                        for item in data
+                    ],
+                    file,
+                    indent=2,
+                )
         except Exception as e:
             print(f"Unexpected error {e}")

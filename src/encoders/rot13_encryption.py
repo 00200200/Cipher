@@ -5,6 +5,7 @@ class Rot13Encryption(Encryption):
     """
     Implements rot13 encryption and decryption
     """
+
     def encrypt(self, text: str) -> str:
         """
         Encrypt the given text using ROT13.
@@ -13,10 +14,10 @@ class Rot13Encryption(Encryption):
         """
         encrypted_text = ""
         for char in text:
-            if 'A' <= char <= 'Z':
-                encrypted_text += chr(((ord(char) - ord('A') + 13) % 26) + ord('A'))
-            elif 'a' <= char <= 'z':
-                encrypted_text += chr(((ord(char) - ord('a') + 13) % 26) + ord('a'))
+            if "A" <= char <= "Z":
+                encrypted_text += chr(((ord(char) - ord("A") + 13) % 26) + ord("A"))
+            elif "a" <= char <= "z":
+                encrypted_text += chr(((ord(char) - ord("a") + 13) % 26) + ord("a"))
             else:
                 encrypted_text += char
         return encrypted_text
