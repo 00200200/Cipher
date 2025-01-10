@@ -7,6 +7,7 @@ class EncryptionFactory:
     """
     Factory class to create encryption objects.
     """
+
     @staticmethod
     def get_encryption(rot_type: str) -> Encryption:
         """
@@ -19,4 +20,3 @@ class EncryptionFactory:
         elif rot_type == "rot47":
             return Rot47Encryption()
         raise ValueError(f"Unsupported encryption type: {rot_type}")
-

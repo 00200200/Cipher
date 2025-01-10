@@ -19,7 +19,11 @@ class Manager:
         self.menu = menu
         self.buffer = buffer
         self.file_handler = file_handler
-        self.actions: dict[int, Callable] = {
+        self.running = True
+
+    @property
+    def actions(self) -> dict[int, Callable]:
+        return {
             1: self.encrypt_text,
             2: self.decrypt_text,
             3: self.show_buffer,
@@ -28,7 +32,6 @@ class Manager:
             6: self.save_to_file,
             7: self._exit,
         }
-        self.running = True
 
     def run(self) -> None:
         """
@@ -49,7 +52,7 @@ class Manager:
 
     def _exit(self) -> None:
         """
-         method terminating the main loop of program.
+        method terminating the main loop of program.
         """
         self.running = False
 
@@ -90,7 +93,6 @@ class Manager:
         Encrypts the user provided text using the chosen strategy
         :return:None
         """
-
         try:
             text = input("Enter text to encrypt: ")
             rot_type = input("Choose encryption type (rot13,rot47): ").lower()
@@ -112,7 +114,7 @@ class Manager:
             rot_type = input("Choose decryption type (rot13,rot47): ").lower()
             encryption = EncryptionFactory.get_encryption(rot_type)
             encrypted_text = encryption.decrypt(text)
-            self.buffer.add(Text(encrypted_text, rot_type, "decrypter"))
+            self.buffer.add(Text(encrypted_text, rot_type, "decrypted"))
         except ValueError as e:
             print(f"Error: {e}")
         except Exception as e:

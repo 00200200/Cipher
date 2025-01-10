@@ -15,7 +15,6 @@ class Buffer:
     def add(self, text: Text) -> None:
         """
         Adds a new Text object to buffer list
-
         :param text: Text object to add
         :return: None
         """

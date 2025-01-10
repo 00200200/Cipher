@@ -1,3 +1,4 @@
+from unittest.mock import Mock
 from src.managers.manager import Manager
 from src.data.buffer import Buffer
 from src.menus.main_menu import MainMenu
@@ -15,14 +16,18 @@ def manager() -> Manager:
     return Manager(menu=MainMenu(), buffer=Buffer(), file_handler=FileHandler())
 
 
-def test_clear_buffer(manager) -> None:
+def test_clear_buffer() -> None:
     """
     Test the clear_buffer method to ensure it clears all data.
     """
-    manager.buffer.add(Text("exmaple", "rot13", "encrypted"))
-    assert len(manager.buffer.get_all()) == 1
+    mock_buffer = Mock()
+    manager = Manager(menu=Mock(), buffer=mock_buffer, file_handler=Mock())
+    # manager.buffer.add(Text("exmaple", "rot13", "encrypted"))
+    # assert len(manager.buffer.get_all()) == 1
     manager.clear_buffer()
-    assert len(manager.buffer.get_all()) == 0
+    # assert len(manager.buffer.get_all()) == 0
+
+    assert mock_buffer.clear.call_count == 1
 
 
 def test_exit(manager) -> None:
